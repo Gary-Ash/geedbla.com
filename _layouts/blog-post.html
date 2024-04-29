@@ -1,0 +1,65 @@
+---
+layout: default
+---
+{% assign haveBlogPost = 0 %}
+{% assign haveProductPost = 0 %}
+
+{% for collection in site.collections %}
+    {% if collection.label == 'blog' %}
+   		{% for item in site[collection.label] %}
+	    	{% assign haveBlogPost = haveBlogPost | plus: 1 %}
+    	{% endfor %}
+    {% endif %}
+
+    {% if collection.label == 'products' %}
+		{% for item in site[collection.label] %}
+		    {% assign haveProductPost = haveProductPost | plus: 1 %}
+		{% endfor %}
+   {% endif %}
+{% endfor %}
+
+{% if haveBlogPost < 2 %}
+	{% if haveProductPost < 2 %}
+		<meta http-equiv="refresh" content="7; url='/about/index.html'" />
+	{% else %}
+		<meta http-equiv="refresh" content="7; url='/products/index.html'" />
+	{% endif %}
+{% endif %}
+
+{% for post in paginator.posts %}
+	<div>
+		<div style="color: #d33682;text-align: center;font-size: 150%">
+			<strong>{{ post.title }}</strong>
+			<div style="line-height: 0.5;text-align: center;color: #657b83;font-size: 60%">
+				{{ post.date | date: '%B %d, %Y' }}
+			</div>
+			<hr>
+		</div>
+	</div>
+	<dev id="post-content">
+	{{ post.content }}
+	</dev>
+	{% if paginator.total_pages > 1 %}
+		<div id="pagination-area">
+			<hr>
+				<div class="pagination">
+				  {% if paginator.previous_page %}
+				    <a href="{{ paginator.previous_page_path | relative_url }}">&laquo; Prev</a>
+				  {% else %}
+				    <span>&laquo; Prev</span>
+				  {% endif %}
+
+				  {% if paginator.next_page %}
+				    <a href="{{ paginator.next_page_path | relative_url }}">Next &raquo;</a>
+				  {% else %}
+				    <span>  Next &raquo;</span>
+				  {% endif %}
+				</div>
+		<script type="text/javascript">
+				var mypad = 560 - document.getElementById('post-content').getBoundingClientRect().height;
+				if (mypad > 0) {
+					document.getElementById('pagination-area').style.paddingTop = mypad + "px";
+				}
+		</script>
+	{% endif %}
+{% endfor %}

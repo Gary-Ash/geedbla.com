@@ -1,0 +1,15 @@
+Gemfile.lock
+_site/
+.sass-cache/
+.jekyll-cache/
+.jekyll-metadata
+.bundle/
+vendor/
+
+_drafts/*
+!_drafts/.gitkeep
+_posts/*
+!_posts/.gitkeep
+
+.DS_Store
+Icon

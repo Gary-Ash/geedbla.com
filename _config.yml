@@ -1,0 +1,61 @@
+title: Gee Dbl A
+description: "The best games and apps on mobile devices"
+
+email: support@geedbla.com
+twitter_username: garyash_
+github_username:  Gary-Ash
+mastodon_username: GaryAsh
+
+url: ""
+baseurl: ""
+encoding: "UTF-8"
+markdown: kramdown
+
+highlighter: rouge
+lsi: false
+incremental: true
+livereload: true
+
+sort_field: 'date'
+sort_reverse: true
+
+kramdown:
+  input: GFM
+  hard_wrap: false
+  auto_ids: true
+  footnote_nr: 1
+  entity_output: as_char
+  toc_levels: 1..6
+  smart_quotes: lsquo,rsquo,ldquo,rdquo
+  enable_coderay: false
+
+sass:
+  sass_dir: _sass
+  style: compressed
+
+plugins:
+  - jekyll-feed
+  - jekyll-paginate-v2
+
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - .gitkeep
+  - LICENSE.md
+  - README.md
+  - .github
+
+collections:
+  blog:
+    output: false
+
+  products:
+    output: false
+
+pagination:
+  enabled: true
+  per_page: 1
+  permalink: index-:num.html
+  title: ' - page :num'
+  limit: 0
+  sort_field: 'date'

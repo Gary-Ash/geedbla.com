@@ -1,0 +1,61 @@
+<nav>                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             <div class="topnav" id="myTopnav" style="float: left;">
+	<a href="/index.html">
+		<div class="tooltip"> <i class="fas fa-home"></i>
+	 		<span class="tooltiptext">Home</span>
+	 	</div>
+  	</a>
+
+	<a href="/blog/index.html">
+		<div class="tooltip"> <i class="fas fa-blog"></i>
+	 		<span class="tooltiptext">Blog</span>
+	 	</div>
+  	</a>
+
+	<a href="/about/index.html">
+		<div class="tooltip"> <i class="fas fa-address-card"></i>
+	 		<span class="tooltiptext">About site/About me</span>
+	 	</div>
+  	</a>
+
+	<a href="/search.html">
+		<div class="tooltip"> <i class="fa-solid fa-magnifying-glass"></i>
+	 		<span class="tooltiptext">Search</span>
+	 	</div>
+  	</a>
+
+   	<a href="{{page.url}}" id="theme-toggle" onclick="modeSwitcher()">
+   		<div class="tooltip"><i class="fa-regular fa-lightbulb"></i>
+	 		<span class="tooltiptext">Toggle Light/Dark mode</span>
+	 	</div>
+   	</a>
+
+	<a href="http://www.geedbla.com/feed.xml" style="float: right;">
+		<div class="tooltip"><i>RSS</i>
+			<span class="tooltiptext">RSS Feed</span>
+	 	</div>
+	</a>
+
+	<a href="mailto:{{site.email}}" style="float: right;">
+		<div class="tooltip"><i class="fas fa-envelope"></i>
+			<span class="tooltiptext">E-mail me</span>
+	 	</div>
+	</a>
+
+	<a href="https://github.com/{{site.github_username}}" style="float: right;">
+		<div class="tooltip"><i class="fab fa-github"></i>
+			<span class="tooltiptext">My GitHub</span>
+	 	</div>
+	</a>
+
+	<a href="https://www.twitter.com/{{site.twitter_username}}" style="float: right;">
+		<div class="tooltip"><i class="fab fa-twitter"></i>
+			<span class="tooltiptext">My Twitter</span>
+	 	</div>
+	</a>
+
+	<a href="ttps://iosdev.space/%40{{site.mastodon_username}}" style="float: right;">
+		<div class="tooltip"><i class="fa-brands fa-mastodon"></i>
+			<span class="tooltiptext">My Mastodon</span>
+	 	</div>
+	</a>
+</nav>
